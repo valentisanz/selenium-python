@@ -4,7 +4,7 @@ username = input("Enter username:")
 password = input("Enter password:")
 userToSearch = input("Enter the user to search:")
 
-driver = webdriver.Chrome("/Users/valenti/Documents/chromedriver")
+driver = webdriver.Chrome("./chromedriver")
 driver.get("https://www.instagram.com/")
 driver.maximize_window()
 

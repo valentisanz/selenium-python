@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 data = []
-chromeDriverUrl = "/Users/valenti/Documents/chromedriver"
+chromeDriverUrl = "./chromedriver"
 cryptoWebUrl = "https://preciohoy.com/prevision-"
 driver = webdriver.Chrome(chromeDriverUrl)
 
