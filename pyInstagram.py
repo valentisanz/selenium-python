@@ -48,7 +48,6 @@ def searchUser():
         print("Something went wrong searching the user, try again. *Could be a problem with wait time between actions.")
         driver.quit()
 
-
 login()
 input()
 driver.quit()
