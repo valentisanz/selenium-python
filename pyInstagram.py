@@ -22,7 +22,7 @@ def login():
     username_box.send_keys(username)
     password_box.send_keys(password)
     btn.click()
-    time.sleep(3)
+    time.sleep(6)
     searchUser()
 
 
@@ -31,14 +31,16 @@ def searchUser():
     search_bar = driver.find_element_by_xpath(
         "//*[@id='react-root']/section/nav/div[2]/div/div/div[2]/input")
     search_bar.send_keys(userToSearch)
-    time.sleep(3)
+    print("Searching user...")
+    time.sleep(6)
+
     # Click the first result of the users list
     first_result = driver.find_element_by_xpath(
-        "//*[@id='react-root']/section/nav/div[2]/div/div/div[2]/div[2]/div[2]/div/a[1]")
+        "//*[@id='react-root']/section/nav/div[2]/div/div/div[2]/div[3]/div[2]/div/a[1]")
     first_result.click()
 
 
 login()
+print("User found, press enter to end program.")
 input()
 driver.quit()
-print("Success :)")
