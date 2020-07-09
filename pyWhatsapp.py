@@ -9,18 +9,23 @@ msg = input("Enter your msg:")
 count = int(input("Enter count:"))
 input("Press enter to continue...")
 
-# Select a user to send the messages
-user = driver.find_element_by_xpath(f"//span[@title='{name}']")
-user.click()
+try:
+    # Select a user to send the messages
+    user = driver.find_element_by_xpath(f"//span[@title='{name}']")
+    user.click()
 
-# Get msg box
-msg_box = driver.find_element_by_xpath(
-    "//*[@id='main']/footer/div[1]/div[2]/div/div[2]")
+    # Get msg box
+    msg_box = driver.find_element_by_xpath(
+        "//*[@id='main']/footer/div[1]/div[2]/div/div[2]")
 
-# Send messages 
-for i in range(count):
-    msg_box.send_keys(msg)
-    driver.find_element_by_xpath(
-        "//*[@id='main']/footer/div[1]/div[3]/button").click()
+    # Send messages
+    for i in range(count):
+        msg_box.send_keys(msg)
+        driver.find_element_by_xpath(
+            "//*[@id='main']/footer/div[1]/div[3]/button").click()
+except:
+    print("Something went wrong")
+    driver.quit()
+
 
 print("Done :)")
